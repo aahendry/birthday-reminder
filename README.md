@@ -42,6 +42,8 @@ def main():
 
 ![GitHub Actions](/images/github-actions-list.png)
 
+Runtime is under 1 minute. On the GitHub free plan, you have 2,000 Actions minutes/month available.  So no problem there.
+
 
 ![workflow](/images/github-actions-workflow.png)
 
@@ -50,7 +52,7 @@ def main():
 
 **Maintaining the birthday file**
 
-I used csv format rather than yaml, json or other format. This is so that I can maintain the list easily on my local machine using Excel.  
+I used csv format rather than yaml, json or other format. This is so that I can maintain the list easily on my local machine using Excel.  It also displays [nicely](https://github.com/whoek/birthday-reminder/blob/master/birthdays.csv) on GitHub.
 
 Sample file
 ```csv
