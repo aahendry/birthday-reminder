@@ -1,8 +1,4 @@
-# The Daily Mail
-
-Send yourself a daily birthday reminder email using Python and Github Actions.
-
-![workflow](/images/daily-email-iphone.png)
+# Send yourself a daily birthday reminder email with Python and Github Actions
 
 After forgetting yet another birthday, I decided to set up a simple daily email reminder system.  It consists of a Python program that is scheduled to run daily using GitHub Actions. All the birthdays and other anniversaries are maintained in a `csv` file and the daily email is send using Sendgrid API.  Due to the low volumes, all the services used - are on FREE plans.
 
@@ -40,17 +36,21 @@ def main():
 
 ## GitHub Actions
 
-- Ensure GitHub Actions is Enabled within Settings of your repository
-- Change the scheduled time in file `.github/workflows/pythonapp.yml`. Use [crontab guru](https://crontab.guru/) as guide if you are not to speed with cron settings
-- To track status or re-run an Action, see details under the `Actions` 
+1. Ensure GitHub Actions is Enabled within Settings of your repository
+2. Change the scheduled time in file `.github/workflows/pythonapp.yml`. Use [crontab guru](https://crontab.guru/) as guide if you are not to speed with cron settings
+3. To track status or re-run an Action, see details under the `Actions` 
 
 ![GitHub Actions](/images/github-actions-list.png)
 
+
 ![workflow](/images/github-actions-workflow.png)
 
-## birthdays.csv 
 
-I used csv format rather than yaml, json or other format. This is so that I can maintain the list easily on my local machine using Excel. 
+## Birthdays
+
+**Maintaining the birthday file**
+
+I used csv format rather than yaml, json or other format. This is so that I can maintain the list easily on my local machine using Excel.  
 
 Sample file
 ```csv
@@ -65,6 +65,7 @@ birthday,age,name,note
 - `birthday` - Must be in `yyyy-mm-dd` format 
 - `age` - You can enter the age of the person on the spesified date/ This is 0 if date of birth was entered. This is used to show the calculated age of the person in the email.  If age of person is known, leave it blank. In this case, the year field of birthday is ignored.   For once-off reminders, add the word `once` in the `ae` field. The reminder will only be shown on exact date indicated. 
 
+**Daily email**
 
-
+![workflow](/images/daily-email.png)
 
