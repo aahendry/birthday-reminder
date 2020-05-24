@@ -1,4 +1,4 @@
-# Send yourself a daily birthday reminder email with Python and Github Actions
+# Send yourself a daily birthday reminder email with Python and GitHub Actions
 
 After forgetting yet another birthday, I decided to set up a simple daily email reminder system.  It consists of a Python program that is scheduled to run daily using GitHub Actions. All the birthdays and other anniversaries are maintained in a `csv` file and the daily email is send using Sendgrid API.  Due to the low volumes, all the services used - are on FREE plans.
 
@@ -28,7 +28,7 @@ def main():
 #       get_stock_html() + \
         get_birthday_html()
 ```
-3. Install Python dependancies with `pip install environs requests sendgrid`. 
+3. Install Python dependencies with `pip install environs requests sendgrid`. 
 4. Get a [SendGrid](https://sendgrid.com/) API key.  It is free if you sent a low volume of emails per day
 5. Update the key info in the `.env` file
 6. Run with `python daily_email.py`
@@ -52,7 +52,7 @@ Runtime is under 1 minute. On the GitHub free plan, you have 2,000 Actions minut
 
 **Maintaining the birthday file**
 
-I used csv format rather than yaml, json or other format. This is so that I can maintain the list easily on my local machine using Excel.  It also displays [nicely](https://github.com/whoek/birthday-reminder/blob/master/birthdays.csv) on GitHub.
+I used standard csv file format rather than yaml, json or any other. This is so that I can maintain the list easily on my local machine using Excel.  It also displays [nicely](https://github.com/whoek/birthday-reminder/blob/master/birthdays.csv) on GitHub.
 
 Sample file
 ```csv
@@ -65,7 +65,7 @@ birthday,age,name,note
 ```
 
 - `birthday` - Must be in `yyyy-mm-dd` format 
-- `age` - You can enter the age of the person on the spesified date/ This is 0 if date of birth was entered. This is used to show the calculated age of the person in the email.  If age of person is known, leave it blank. In this case, the year field of birthday is ignored.   For once-off reminders, add the word `once` in the `ae` field. The reminder will only be shown on exact date indicated. 
+- `age` - You can enter the age of the person on the specified date. Make this 0 if date of birth was entered. This is used to show the calculated age of the person in the email.  If age of person is unknown , leave the `age` field blank. Where the `age` field is blank, the year field of birthday is ignored.   For once-off reminders or events, add the word `once` in the `age` field. The reminder will only be shown on date indicated. 
 
 **Daily email**
 
