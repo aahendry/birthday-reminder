@@ -3,5 +3,5 @@
 
 Documentaton here:  
 
-<https://willemhoek.com/b/birthday-reminder-with-github-actions-and-python>
+<https://whoek.com/b/birthday-reminder-with-github-actions-and-python>
 
